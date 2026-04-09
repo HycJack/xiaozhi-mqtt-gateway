@@ -1,0 +1,12 @@
+{
+  "name": "mqtt-gateway-test-client",
+  "version": "1.0.0",
+  "description": "MQTT Gateway 测试客户端",
+  "main": "test-client.js",
+  "scripts": {
+    "test": "node test-client.js"
+  },
+  "dependencies": {
+    "mqtt": "^5.0.0"
+  }
+}
