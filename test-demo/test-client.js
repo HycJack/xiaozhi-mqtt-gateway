@@ -5,9 +5,9 @@ const crypto = require('crypto');
 // 配置参数
 const config = {
     mqttHost: 'localhost',
-    mqttPort: 1883,
+    mqttPort: 1885,
     udpHost: 'localhost',
-    udpPort: 1883,
+    udpPort: 1886,
     clientId: 'GID_test@@@00:11:22:33:44:55',
     username: 'test_user',
     password: 'test_password'

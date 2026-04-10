@@ -1,0 +1,63 @@
+[package]
+name = "rust-mqtt-xiaozhi"
+version = "0.1.0"
+edition = "2021"
+authors = ["xiaozhi-mqtt-team"]
+description = "XiaoZhi MQTT Gateway - Rust 实现"
+
+[dependencies]
+tokio = { version = "1.35", features = ["full"] }
+tokio-util = { version = "0.7", features = ["full"] }
+tokio-tungstenite = "0.21"
+futures-util = "0.3"
+bytes = "1.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+log = "0.4"
+env_logger = "0.11"
+anyhow = "1.0"
+thiserror = "1.0"
+uuid = { version = "1.6", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+regex = "1.10"
+lazy_static = "1.4"
+dashmap = "5.5"
+async-trait = "0.1"
+hex = "0.4"
+
+[dependencies.mqtt-protocol]
+path = "mqtt-protocol"
+
+[dependencies.websocket-bridge]
+path = "websocket-bridge"
+
+[dependencies.udp-handler]
+path = "udp-handler"
+
+[dependencies.config-manager]
+path = "config-manager"
+
+[dependencies.auth-manager]
+path = "auth-manager"
+
+[workspace]
+members = [
+    "mqtt-protocol",
+    "websocket-bridge", 
+    "udp-handler",
+    "config-manager",
+    "auth-manager"
+]
+
+[[bin]]
+name = "mqtt-gateway"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 0

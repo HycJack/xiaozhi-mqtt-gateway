@@ -1,0 +1,25 @@
+[mqtt]
+port = 1883
+max_connections = 1000
+max_payload_size = 8192
+keep_alive_timeout = 60
+
+[udp]
+port = 1883
+max_packet_size = 8192
+encryption = "aes-128-ctr"
+
+[websocket]
+url = "ws://localhost:8080"
+reconnect_interval = 5000
+max_reconnect_attempts = 10
+
+[auth]
+enabled = true
+protocols = ["default", "oauth2", "jwt", "token"]
+default_username = "test_user"
+default_password = "test_password"
+
+[logging]
+level = "info"
+file = "mqtt-gateway.log"
